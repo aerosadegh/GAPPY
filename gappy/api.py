@@ -27,6 +27,8 @@ def _transform(req, **user_kw):
     headers = {'token': token}
     if method == 'upload':
         return requests.post, {'url': url, 'files': fields, 'headers': headers}
+    eslif: method == 'location':
+        
     else:
         return requests.post, {'url': url, 'data': fields, 'headers': headers}
 
