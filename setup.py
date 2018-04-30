@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 import re
 
@@ -17,14 +17,13 @@ with open(path.join(here, 'gappy', '__init__.py')) as f:
 
 setup(
     name='gappy',
-    packages=['gappy'],
     author="Sadegh Yazdani, Hossein Jafarzadeh, Mostafa Asadi",
     author_email="m.s.yazdani86@gmail.com",
     project_urls={
-        "Source Code": "https://github.com/hsin75/Gappy",
+        "Source Code": "https://github.com/GapAPy/Gappy/",
     },
     install_requires=install_requires,
-
+    packages=find_packages(),
     version=version,
 
     description='Python framework for Gap Service API',
@@ -66,7 +65,7 @@ if __name__ == '__main__':
 ```
 """,
 
-    url='https://github.com/hsin75/Gappy',
+    url='https://github.com/GapAPy/Gappy/',
 
     license='GPL',
 
@@ -78,7 +77,7 @@ if __name__ == '__main__':
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Communications :: Chat',
 
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
 
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
