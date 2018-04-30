@@ -634,7 +634,6 @@ class Bot(_BotBase):
             p = json.loads(r.text)
             if desc:
                 p.update({'desc': desc})
-                print(p)
                 return content_type, json.dumps(p)
             else:
                 return content_type, json.dumps(p)

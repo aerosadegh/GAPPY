@@ -53,6 +53,5 @@ def _parse(response):
 
 def request(req, **user_kw):
     fn, kwargs = _transform(req, **user_kw)
-    print('>>>>>>> ', kwargs)
     r = fn(**kwargs)  # `fn` must be thread-safe
     return _parse(r)
