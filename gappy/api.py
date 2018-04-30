@@ -16,9 +16,7 @@ def _fix_type(v):
 def _compose_fields(req, **user_kw):
     token, method, params = req
     fields = {k: _fix_type(v) for k, v in params.items()} if params is not None else {}
-    #if fields.get('data', ''):
-        #return fields['data']
-    #else:
+
     return fields
 
 
@@ -28,7 +26,9 @@ def _transform(req, **user_kw):
     url = _methodurl(req, **user_kw)
     headers = {'token': token}
     if method == 'upload':
-        return requests.post, {'url': url, 'files': fields, 'headers': headers}        
+        return requests.post, {'url': url, 'files': fields, 'headers': headers}
+    eslif: method == 'location':
+        
     else:
         return requests.post, {'url': url, 'data': fields, 'headers': headers}
 
@@ -53,6 +53,5 @@ def _parse(response):
 
 def request(req, **user_kw):
     fn, kwargs = _transform(req, **user_kw)
-    print('>>>>>>> ', kwargs)
     r = fn(**kwargs)  # `fn` must be thread-safe
     return _parse(r)
